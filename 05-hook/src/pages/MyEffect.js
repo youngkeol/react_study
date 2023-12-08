@@ -16,7 +16,11 @@ const MyEffect = () => {
         console.log('[MyEffect3] myBrightness값 변경시 실행');
     }, [myBrightness]);
 
-
+    useEffect(()=>{
+        return ()=>{
+            console.log('[MyEffect4] 컴포넌트가 화면에 사라지기 직전에 실행');
+        }
+    },);
 
 
     return (
@@ -30,6 +34,7 @@ const MyEffect = () => {
                     step='1'
                     value={myBrightness}
                     onChange={(e)=>{
+                        console.log(e.currentTarget.value);
                         setMyBrightness(e.currentTarget.value);
                     }}
                 />
@@ -38,7 +43,7 @@ const MyEffect = () => {
                 src={avatar}
                 width={100}
                 style={{
-                    fill:'brightness(' + myBrightness + '%)'
+                    filter:'brightness(' + myBrightness + '%)'
                 }}
             />
         </div>
