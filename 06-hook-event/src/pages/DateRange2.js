@@ -2,8 +2,11 @@ import React, { useReducer } from "react";
 import dayjs from "dayjs";
 
 function setDateValue(state, action) {
+    const day = dayjs();
+
     switch (action) {
         case "DAY1":
+            sdate = day.add(-) 
             return;
     }
 }

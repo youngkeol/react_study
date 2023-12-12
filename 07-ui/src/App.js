@@ -1,14 +1,14 @@
-import React, { memo } from 'react';
+import React, { memo } from "react";
 import { Routes, Route } from "react-router-dom";
 import MenuLink from "./components/MenuLink";
 
 import Home from "./pages/Home";
-import CollapseEx from './pages/CollapseEx';
-import SubmenuEx from './pages/SubmenuEx';
-import StyleEx from './pages/StyleEx';
-import ImageEx from './pages/ImageEx';
-import TabEx from './pages/TabEx';
-import CreateElementEx from './pages/CreateElementEx';
+import CollapseEx from "./pages/CollapseEx";
+import SubmenuEx from "./pages/SubmenuEx";
+import StyleEx from "./pages/StyleEx";
+import ImageEx from "./pages/ImageEx";
+import TabEx from "./pages/TabEx";
+import CreateElementEx from "./pages/CreateElementEx";
 
 const App = memo(() => {
     return (
@@ -30,10 +30,9 @@ const App = memo(() => {
                 <Route path="/submenuEx" element={<SubmenuEx />} />
                 <Route path="/collapseEx" element={<CollapseEx />} />
                 <Route path="/createElementEx" element={<CreateElementEx />} />
-
             </Routes>
         </div>
     );
-})
+});
 
-export default App;
+export default memo(App);

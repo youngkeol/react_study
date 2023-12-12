@@ -7,6 +7,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "classname": "^0.0.0",
+    "classnames": "^2.3.2",
     "cra-template": "1.2.0",
     "dayjs": "^1.11.10",
     "react": "^18.2.0",
@@ -14,7 +15,9 @@
     "react-helmet-async": "^2.0.3",
     "react-router-dom": "^6.20.1",
     "react-scripts": "5.0.1",
+    "sass": "^1.69.5",
     "styled-components": "^6.1.1",
+    "styled-reset": "^4.5.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
