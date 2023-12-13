@@ -31,9 +31,15 @@ const TabContainer = styled.div`
             }
         }
     }
+
+    .tab-page {
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+    }
 `;
 
-const tabcContent = [
+const tabContent = [
     {
         id: "newyaork",
         subject: "NewYork",
@@ -59,20 +65,27 @@ const TabEx = memo(() => {
         const current = e.currentTarget;
         const href = current.getAttribute("href");
 
-        let currentIndex = tabcContent.findIndex((ele) => {
+        let currentIndex = tabContent.findIndex((ele) => {
             return `#${ele.id}` === href;
         });
 
         setTabIndex(currentIndex);
     }, []);
 
+    const { subject, content } = useMemo(
+        (e) => {
+            return tabContent[tabIndex];
+        },
+        [tabIndex]
+    );
+
     return (
         <div>
-            <h2>TabEx{tabIndex}</h2>
+            <h2>TabEx</h2>
 
             <TabContainer>
                 <div className="tab-button-group">
-                    {tabcContent.map((v, i) => {
+                    {tabContent.map((v, i) => {
                         const cls = classnames({
                             "tab-button": true,
                             active: i == tabIndex,
@@ -88,6 +101,10 @@ const TabEx = memo(() => {
                             </a>
                         );
                     })}
+                </div>
+                <div className="tab-page">
+                    <h3>{subject}</h3>
+                    <p>{content}</p>
                 </div>
             </TabContainer>
         </div>
