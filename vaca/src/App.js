@@ -1,27 +1,32 @@
+import { Routes,  Route} from 'react-router-dom';
 
-import Css from './component/Css';
-import DayList from './component/DayList';
-import Day from './component/Day'
-import  Event from './component/Event';
 
 import Header from './component/Header';
+import DayList from './component/DayList.tsx';
+import Day from './component/Day.tsx';
+import CreateWord from './component/CreateWord.tsx';
+import EmptyPage from './component/EmptyPage';
+import CreateDay from './component/CreateDay';
+
 
 function App() {
-    const name = "Tom";
-    const naver = {
-        name:"네이버",
-        url : 'https://naver.com'
-    }
+
 
     return (
         <div className="App">
             <Header />
-            <DayList />
-            <Day />
-            <Css />
+
+            <Routes>
+                <Route path="/" element={<DayList />} />
+                <Route path="/day/:day" element={<Day />} />
+                <Route path="/create_word" element={<CreateWord />} />
+                <Route path="/create_day" element={<CreateDay />} />
+                <Route path="/*" element={<EmptyPage />} />
+            </Routes>
+            {/* <Css />
             <Event age={10}/>
             <Event age={20}/>
-            <Event age={30}/>
+        <Event age={30}/> */}
         </div>
     );
 }

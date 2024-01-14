@@ -1,16 +1,19 @@
+import {Link} from 'react-router-dom';
 export default function Header(){
     return (
         <div className="header">
-            <h1>영단어</h1>
+            <h1>
+                <Link to="/">영단어</Link>    
+            </h1>
 
             <div className="menu">
 
-                <a className="link">
+                <Link to="/create_word" className='link'> 
                     단어 추가
-                </a>
-                <a className="link">
+                </Link>
+                <Link to="/create_day" className='link'> 
                     Day추가
-                </a>
+                </Link>
             </div>
         </div>
     )
