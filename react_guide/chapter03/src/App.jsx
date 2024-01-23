@@ -45,7 +45,7 @@ function App() {
                             />
 
                         ))}
-                    </ul>
+                    </ul>   
                 </section>
                 <section id="examples">
                     <h2>Examples</h2>
