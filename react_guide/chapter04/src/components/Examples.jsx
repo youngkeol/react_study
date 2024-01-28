@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 
 import {EXAMPLES} from '../data.js';
 import Section from './Section.jsx';
+import Tabs from './Tabs.jsx';
 import Tabutton from './Tabutton.jsx';
 
 const Examples = () => {
@@ -27,27 +28,32 @@ const Examples = () => {
 
 
     return (
-        <Section title="Examples"id="examples">
-            <menu>
-                <Tabutton
-                    isSelected={selectedTopic == 'components'}
-                    onSelect={(e) => handleClick('components')}>Compoents
-                </Tabutton>
-                <Tabutton
-                    isSelected={selectedTopic == 'jsx'}
-                    onSelect={(e) => handleClick('jsx')}>Jsx
-                </Tabutton>
-                <Tabutton
-                    isSelected={selectedTopic == 'props'}
-                    onSelect={(e) => handleClick('props')}>Props
-                </Tabutton>
-                <Tabutton
-                    isSelected={selectedTopic == 'state'}
-                    onSelect={(e) => handleClick('state')}>States
-                </Tabutton>
-            </menu>
-
-            {tabContent}
+        <Section title="Examples" id="examples">
+            <Tabs 
+                ButtonsContainer="menu"
+                buttons={
+                    <>
+                    <Tabutton
+                        isSelected={selectedTopic == 'components'}
+                        onClick={(e) => handleClick('components')}>Compoents
+                    </Tabutton>
+                    <Tabutton
+                        isSelected={selectedTopic == 'jsx'}
+                        onClick={(e) => handleClick('jsx')}>Jsx
+                    </Tabutton>
+                    <Tabutton
+                        isSelected={selectedTopic == 'props'}
+                        onClick={(e) => handleClick('props')}>Props
+                    </Tabutton>
+                    <Tabutton
+                        isSelected={selectedTopic == 'state'}
+                        onClick={(e) => handleClick('state')}>States
+                    </Tabutton>
+                    </>
+                }>
+                {tabContent}
+            </Tabs>
+           
         </Section>
     );
 };

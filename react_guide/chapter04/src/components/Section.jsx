@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Section = (props) => {
+const Section = ({title, children, ...props}) => {
     return (
-        <section id={props.id}>
-            <h2>{props.title}</h2>
-            {props.children}
+        <section {...props}>
+            <h2>{title}</h2>
+            {children}
         </section>
     );
 };
