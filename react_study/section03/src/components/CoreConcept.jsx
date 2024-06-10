@@ -1,10 +1,10 @@
 import React from 'react';
 import './CoreConcept.css';
 
-const CoreConcept = ({img, title, description}) => {
+const CoreConcept = ({image, title, description}) => {
     return (
         <li>
-            <img src={img} art={title} />
+            <img src={image} art={title} />
             <h3>{title}</h3>
             <p>{description}</p>
         </li>
